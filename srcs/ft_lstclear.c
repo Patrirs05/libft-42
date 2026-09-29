@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/29 13:23:07 by patrirod          #+#    #+#             */
-/*   Updated: 2026/09/29 14:38:32 by patrirod         ###   ########.fr       */
+/*   Created: 2026/09/29 16:08:24 by patrirod          #+#    #+#             */
+/*   Updated: 2026/09/29 16:10:40 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//Allocates memory and returns a new node. The ‘content’ variable is 
-//initialized with the content of the ‘content’ parameter, 
-///while the ‘next’ variable is initialized to NULL.
-t_list	*ft_lstnew(void *content)
+void	ft_lstclear(t_list *lst, void (*del)(void *))
 {
-	t_list	*node;
+	t_list	*current;
+	t_list	*next_node;
 
-	node = (t_list *)malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	if (!lst || !del)
+		return ;
+	current = lst;
+	while (current != NULL)
+	{
+		next_node = current->next;
+		del(current->content);
+		free(current);
+		current = next_node;
+	}
 }

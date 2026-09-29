@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/29 13:23:07 by patrirod          #+#    #+#             */
-/*   Updated: 2026/09/29 14:38:32 by patrirod         ###   ########.fr       */
+/*   Created: 2026/09/29 15:11:22 by patrirod          #+#    #+#             */
+/*   Updated: 2026/09/29 16:10:51 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//Allocates memory and returns a new node. The ‘content’ variable is 
-//initialized with the content of the ‘content’ parameter, 
-///while the ‘next’ variable is initialized to NULL.
-t_list	*ft_lstnew(void *content)
+//Counts the number of nodes in a list.
+unsigned int	ft_lstsize(t_list *lst)
 {
-	t_list	*node;
+	t_list			*current;
+	unsigned int	count;
 
-	node = (t_list *)malloc(sizeof(t_list));
-	if (!node)
-		return (NULL);
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	if (!lst)
+		return (0);
+	current = lst;
+	count = 0;
+	while (current != NULL)
+	{
+		current = current->next;
+		count++;
+	}
+	return (count);
 }
