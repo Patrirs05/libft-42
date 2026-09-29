@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 12:31:04 by marvin            #+#    #+#             */
-/*   Updated: 2026/09/27 12:31:04 by marvin           ###   ########.fr       */
+/*   Created: 2026/09/29 10:42:05 by patrirod          #+#    #+#             */
+/*   Updated: 2026/09/29 10:42:25 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-\\ function returns a pointer to the last occurrence of the character c in the string s
+//returns a pointer to the last occurrence of the character c in the string s
 char	*strrchr(const char *s, int c)
 {
 	int	i;
@@ -24,5 +24,5 @@ char	*strrchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i--;
 	}
-	return(NULL);
+	return (NULL);
 }

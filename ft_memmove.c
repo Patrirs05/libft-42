@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 20:23:54 by marvin            #+#    #+#             */
-/*   Updated: 2026/09/29 10:48:25 by patrirod         ###   ########.fr       */
+/*   Created: 2026/09/24 13:16:12 by patrirod          #+#    #+#             */
+/*   Updated: 2026/09/24 15:25:45 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//function returns a pointer to a new string which is a 
-//duplicate of the string s.
-//Memory for the new string is obtained with malloc(3), 
-//and can be freed with free(3).
-char	*ft_strdup(const char *s1)
+// se compara la posición de los punteros dest y src
+void	*memmove(void *dest, const void *src, size_t n)
 {
-	char	*dup;
-	int		i;
-	int		len;
+	size_t				i;
+	const unsigned char	*ptr_src;
+	unsigned char		*ptr_dest;
 
-	i = 0;
-	len = ft_strlen(s1);
-	dup = (char *)malloc((len + 1) * sizeof(char));
-	if (!dup)
+	if (!dest && !src)
 		return (NULL);
-	while (i <= len)
+	ptr_src = (const unsigned char *) src;
+	ptr_dest = (unsigned char *) dest;
+	if (ptr_dest > ptr_src)
 	{
-		dup[i] = s1[i];
-		i++;
+		i = n;
+		while (i-- > 0)
+			ptr_dest[i] = ptr_src[i];
 	}
-	return (dup);
+	else
+	{
+		i = 0;
+		while (i < n)
+		{
+			ptr_dest[i] = ptr_src[i];
+			i++;
+		}
+	}
+	return (dest);
 }

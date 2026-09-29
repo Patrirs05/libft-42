@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 11:48:01 by marvin            #+#    #+#             */
-/*   Updated: 2026/09/28 11:48:01 by marvin           ###   ########.fr       */
+/*   Updated: 2026/09/29 10:49:49 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	ft_count_words(char const *s, char c)
 static void	*ft_free_matrix(char **words, size_t len)
 {
 	int	i;
-	
+
 	i = len;
 	while (i > 0)
 	{
@@ -57,7 +57,7 @@ static char	**ft_allocate_words(char **words, char const *s, char c)
 		if (s[i] == '\0')
 			break ;
 		j = i;
-		while(s[j] != c && s[j] != '\0')
+		while (s[j] != c && s[j] != '\0')
 			j++;
 		words[k] = ft_substr(s, i, j - i);
 		if (!words[k])
@@ -69,8 +69,9 @@ static char	**ft_allocate_words(char **words, char const *s, char c)
 	return (words);
 }
 
-\\Allocates memory and returns an array of strings obtained by splitting the string
-\\‘s’ into substrings using the character ‘c’ as the delimiter.
+//Allocates memory and returns an array of strings 
+//obtained by splitting the string
+//‘s’ into substrings using the character ‘c’ as the delimiter.
 char	**ft_split(char const *s, char c)
 {
 	char	**words;

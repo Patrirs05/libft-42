@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 20:39:20 by marvin            #+#    #+#             */
-/*   Updated: 2026/09/27 20:39:20 by marvin           ###   ########.fr       */
+/*   Created: 2026/09/29 10:40:42 by patrirod          #+#    #+#             */
+/*   Updated: 2026/09/29 10:41:37 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-\\returns a substring of the current string, starting at index, and length characters long.
+//returns a substring of the current string, starting at index,
+//and length characters long.
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;

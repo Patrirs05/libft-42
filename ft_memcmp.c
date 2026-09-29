@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 13:20:37 by marvin            #+#    #+#             */
-/*   Updated: 2026/09/27 13:20:37 by marvin           ###   ########.fr       */
+/*   Updated: 2026/09/29 10:50:02 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-\\function compares the first n bytes (each interpreted as unsigned char) of the memory areas s1 and s2
+//function compares the first n bytes (each interpreted as unsigned char) 
+//of the memory areas s1 and s2
 int	memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t				i;

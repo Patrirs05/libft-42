@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patrirod <patrirod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 12:40:40 by marvin            #+#    #+#             */
-/*   Updated: 2026/09/29 10:44:18 by patrirod         ###   ########.fr       */
+/*   Created: 2026/09/23 12:41:28 by patrirod          #+#    #+#             */
+/*   Updated: 2026/09/24 12:46:12 by patrirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//it only compares the first (at most) n bytes of s1 and s2.
-//It returns an integer less than, equal to, or greater than
-//zero if s1 is found, respectively, to be less than, to match,
-//or be greater than s2.
-int	strncmp(const char *s1, const char *s2, size_t n)
+void	bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ptr;
 
 	i = 0;
-	if (n == 0)
-		return (0);
+	ptr = (unsigned char *) s;
 	while (i < n)
 	{
-		if (s1[i] != '\0' || s1[i] == s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		ptr[i] = 0;
 		i++;
 	}
-	return (0);
 }
